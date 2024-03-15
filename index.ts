@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-// import routes from './routes';
+import routes from './routes';
 
 // import cronJob from './services/cron';
 
@@ -18,7 +18,7 @@ app.use(
 app.use(express.json());
 // app.use(cookieParser(process.env.JWT_SECRET!));
 // app.use(express.static(__dirname + '/' + process.env.PUBLIC_FOLDER as string));
-// routes(app);
+routes(app);
 
 // cronJob.start();
 
