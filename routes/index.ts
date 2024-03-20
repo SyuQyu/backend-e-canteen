@@ -1,6 +1,7 @@
-import userRoutes from './feature.auth.routes/auth';
-import errorHandler from '../handler/errorHandler';
-export default function routes(app: any) {
-  userRoutes(app);
-  app.use(errorHandler);
-}
+import { Router } from "express";
+import userRoutes from "./userRoutes";
+
+const router = Router();
+router.use("/user", userRoutes);
+
+export default router;

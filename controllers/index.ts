@@ -38,11 +38,3 @@
 //         }
 //     });
 // });
-
-
-import {
-    login
-} from './feature.auth.controllers/auth';
-export {
-    login
-}

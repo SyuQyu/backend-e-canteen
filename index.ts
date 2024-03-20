@@ -4,6 +4,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import routes from "./routes";
 import nodemailer from "nodemailer";
+import router from "./routes";
 
 const app = express();
 dotenv.config();
@@ -13,11 +14,12 @@ const port = API_PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
+app.use(router);
 // app.use(cookieParser(process.env.JWT_SECRET!));
 // app.use(express.static(__dirname + '/' + process.env.PUBLIC_FOLDER as string));
-routes(app);
 
 app.get("/", (req, res) => {
+  console.log(req.headers.authorization);
   res.send("Hello World!");
 });
 
